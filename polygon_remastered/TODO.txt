@@ -1,0 +1,97 @@
+lab24:
+
+    Dodaj dokumentacjê pliku w pliku Polygon.cpp
+
+    Dodaj dokumentacjê pliku w pliku main.cpp
+
+lab25:
+
+    Dodaj dokumentacjê dwóch utworzonych metod
+
+
+lab26:
+    Do klas Punkt2 oraz Polygon dodaj publiczne konstruktory (pamiêtaj o komentarzach dla dokumentacji):
+
+        konstruktor z argumentami inicjalizuj¹cymi wszystkie sk³adowe klasy (alokacja dla sk³adowej wskaŸnikowej w konstruktorze klasy Polygon, typ argumentu przekazuj¹cego ci¹g wierzcho³ków: std::vector<std::vector<double>>)
+
+        destruktor (z pustym kodem (lub drukowanym komentarzem) w przypadku klasy Punkt2, dealokacja dla sk³adowych wskaŸnikowych w przypadku klasy Polygon) 
+
+    W obu klasach zadeklaruj statyczn¹ sk³adow¹ s³u¿¹c¹ do zliczania iloœci zdefiniowanych obiektów danej klasy
+
+    W funkcji main() zdefiniuj zmienne dla konstruktora niedomyœlnego klasy Polygon i utwórz adekwatny obiekt. Odczytaj iloœæ obiektów typu Punkt2 wygenerowanych przez program.
+
+    Zdefiniuj dwa obiekty typu Polygon przy pomocy konstruktora domyœlnego. SprawdŸ inicjalizacjê sk³adowych. Odczytaj iloœæ obiektów typu Polygon wygenerowanych przez program. 
+
+
+lab27:
+     Do klasy Punkt2 dodaj
+
+        operator odejmowania (w klasie)
+
+        operator iloczynu skalarnego (poza klas¹) 
+
+    W funkcji main() przetestuj zdefiniowane opertaory. 
+
+
+lab28:
+    Do klasy Polygon dodaj konstruktor kopiuj¹cy zapewniaj¹cy kopiê g³êbok¹. Uwzglêdnij statyczn¹ sk³adow¹ s³u¿¹c¹ do zliczania iloœci zdefiniowanych obiektów danej klasy.
+
+    W funkcji main() przeprowadŸ stosowne testy. 
+
+
+lab29:
+    [[Na stronie skopiowaæ]] Prze³adowanie operatora << polega na prze³adowaniu funkcji o nazwie operator<< :  
+
+    Zdefiniuj kontekstowy dla klasy Polygon operator << w wersji funkcji zaprzyjaŸnionej
+
+    W funkcji main() przetestuj zdefiniowany operator. 
+
+
+lab30:
+    WprowadŸ (z wyk³adu) do kodu klasy Punkt2 konstruktor z parametrem std::initializer_list oraz (równie¿ z wyk³adu) odpowiednie testy do funkcji main(). Przeanalizuj dok³adnie wyniki.
+
+    Zadanie dla chêtnych: Do klasy Polygon dopisz konstruktor z parametrem std::initializer_list, korzystaj¹c z faktu, ¿e w klasie Punkt2 analogiczny konstruktor ju¿ istnieje. Wykorzystaj fakt, ¿e w szablonie std::initalizer_list istnieje metoda size(). W funkcji main() przeprowadŸ analogiczne jego testym, jak dla klasy Punkt2.
+
+    Zmodyfikuj wszystkie konstruktory w klasach Punkt2 oraz Polygon tak, aby maksymalnie wykorzystywa³y mo¿liwoœci listy inicjalizacyjnej konstruktora.
+
+    W funkcji main() wykonaj wszystkie potrzebne testy nowych konstruktorów 
+
+
+lab31:
+    [[Na stronie skopiowaæ]] Podobnie jak w przypadkach wczeœniej prze³adowywanych operatrów równie¿ tutaj musimy prze³adowaæ odpowiedni¹ funkcjê, w tym przypadku o nazwie operator[]: 
+
+    Zdefiniuj w klasie Polygon poprawny kopiuj¹cy operator przypisania oraz zaimplementuj operator indeksowania wg kodu powy¿ej 
+
+
+lab32:
+    Przeczytaj jeszcze raz uwa¿nie pocz¹tkowy fragment Wyk³adu 15 do drugiej Uwagi w³¹cznie, zwracaj¹c szególn¹ uwagê na optymalizacjê kopiowania.
+
+    W klasie Punkt2 dopisz stosowny konstruktor przenosz¹cy (Wyk³ad 16). We wszystkich konstruktorach klasy Punkt2 dodaj na koñcu komentarze drukuj¹ce inforrmacje, ¿e dany konstruktor siê uruchomi³ i na jakim obiekcie siê uruchomi³, np. w g³ównym konstruktorze
+
+        std::cout << "Uruchomiono konstruktor: (" << x << ", " << y << ")" << std::endl;
+
+    [[Na stronie skopiowaæ]] W funkcji main() wprowadŸ nastêpuj¹cy kod: 
+
+    Zaobserwuj komunikaty pokazuj¹ce kolejnoœæ wywo³ywanych konstruktorów i wyjaœnij w jakich przypadkach nast¹pi³a optymalizacja pomijania kopiowania (obowi¹zkowa dla kompilatorów w standardzie C++17, ale mo¿liwa ju¿ od standardu C++11). Wyjaœnij równie¿ rolê konstruktora przenosz¹cego w tym kodzie. 
+
+
+lab33:
+    [[Na stronie skopiowaæ]] Przeanalizuj szczegó³wo poni¿szy tekst: 
+
+    Zdefiniuj w klasie Polygon poprawny przenosz¹cy operator przypisania oraz przetestuj w funkcji main() jego dzia³anie 
+
+
+lab34:
+    [[Na stronie skopiowaæ]] Napisz klasê o nazwie MapPolygon, pochodn¹ wzglêdem klasy Polygon. Klasa powinna zawieraæ: 
+
+        nowe sk³adowe: 
+
+        konstruktory: domyœlny, w pe³ni sparametryzowany, kopiuj¹cy, przenosz¹cy, z argumentem 'std::initializer_list<>' (to nie musi byæ jedyny argument), 
+
+        destruktor 
+
+        potrzebne nowe gettery i settery 
+
+        prze³adowanie operatora '<<' w celu drukowania obiektu 
+
+    [[Na stronie skopiowaæ]] DODATKOWE: klasa Map    
