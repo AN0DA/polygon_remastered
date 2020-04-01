@@ -9,7 +9,7 @@
 	* \author Jan Kaczmarek
 	* \author Jakub Marciniak
 	* \author Mateusz Chlebosz
-	* \date 2020.04.1
+	* \date 2020.04.01
 	* \version 1.00.10
 	*/
 #include <iostream>
@@ -107,7 +107,7 @@ int main()
 	Punkt2 is2;
 	is2.setX(15);
 	is2.setY(0);
-	std::cout<<"Iloczyn skalarny: "<< is1.getX()* is2.getX() + is1.getY() * is2.getY();
+	std::cout<<"Iloczyn skalarny: "<< is1.getX() * is2.getX() + is1.getY() * is2.getY();
 
 	//W funkcji main() zdefiniuj zmienne dla konstruktora niedomyœlnego klasy Polygon i utwórz adekwatny obiekt. Odczytaj iloœæ obiektów typu Punkt2 wygenerowanych przez program.
 }

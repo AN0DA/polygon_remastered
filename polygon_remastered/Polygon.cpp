@@ -9,7 +9,7 @@
 	* \author Jan Kaczmarek
 	* \author Jakub Marciniak
 	* \author Mateusz Chlebosz
-	* \date 2020.04.1
+	* \date 2020.04.01
 	* \version 1.00.10
 	*/
 
@@ -25,17 +25,6 @@ Polygon::Polygon() {
 	polygon_instances++;
 };
 
-Polygon::Polygon(std::vector<std::vector<double> > arr)
-{
-	polygon_instances++;
-
-	count = arr.size();
-	Punkt2* _vertices = new Punkt2[count];
-	for(unsigned int i = 0; i < count-1; i++){
-		_vertices[i] = new Punkt2[2]{ arr[i][0],arr[i][1] };
-	}
-	vertices = _vertices;
-}
 
 Polygon::~Polygon() {
 	polygon_instances--;
@@ -103,7 +92,7 @@ double Polygon::getArea() {
 	double f = 0.0;
   
 	int j = count - 1; 
-    for (int i = 0; i < count; i++) 
+    for (unsigned int i = 0; i < count; i++) 
     { 
         f += (vertices[j].getX() + vertices[i].getX()) * (vertices[j].getY() - vertices[i].getY()); 
         j = i;

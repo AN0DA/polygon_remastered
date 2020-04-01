@@ -10,12 +10,15 @@
 	* \author Dawid Pieczyñski
 	* \author Jan Kaczmarek
 	* \date 2020.04.01
-	* \version 1.00.00
+	* \version 1.00.10
 	*/
 
 #pragma once
+
 #include <vector>
+
 #include "Punkt2.h"
+
 
 int polygon_instances = 0;
 
@@ -29,8 +32,6 @@ class Polygon
 public:
 
 	Polygon();
-
-	Polygon(std::vector<std::vector<double> > arr);
 
 	~Polygon();
 

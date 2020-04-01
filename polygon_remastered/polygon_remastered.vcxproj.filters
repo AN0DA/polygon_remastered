@@ -44,9 +44,4 @@
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\..\..\..\dorotaszrot.battps">
-      <Filter>Source Files</Filter>
-    </None>
-  </ItemGroup>
 </Project>

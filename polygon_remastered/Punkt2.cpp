@@ -9,7 +9,7 @@
 	* \author Jan Kaczmarek
 	* \author Jakub Marciniak
 	* \author Mateusz Chlebosz
-	* \date 2020.04.1
+	* \date 2020.04.01
 	* \version 1.00.10
 	*/
 
@@ -25,16 +25,9 @@ Punkt2::Punkt2() {
 	Punkt2_instances++;
 }
 
-Punkt2::Punkt2(Punkt2&& p){
-	Punkt2_instances++;
-
-	double x{ 0.0 };
-	double y{ 0.0 };
-}
-
-Punkt2::~Punkt2() {
-	Punkt2_instances--;
-}
+//Punkt2::~Punkt2() {
+//	Punkt2_instances--;
+//}
 
 
 

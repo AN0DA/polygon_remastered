@@ -12,7 +12,7 @@
 	* \author Dawid Pieczyñski
 	* \author Jan Kaczmarek
 	* \date 2020.04.01
-	* \version 1.00.00
+	* \version 1.00.10
 	*/
 
 #pragma once
@@ -28,10 +28,9 @@ public:
 	//constructor
 	Punkt2();
 
-	Punkt2(Punkt2&& p);
+	//Punkt2(Punkt2&& p);
 	
-
-	~Punkt2();
+	//~Punkt2();
 
 
 	//settery
