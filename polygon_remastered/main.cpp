@@ -1,22 +1,39 @@
-/*! \file Polygon.cpp
+/*! \file main.cpp
 	*
-	* \brief Zawiera definicjê klasy Polygon
+	* \brief Zawiera g³ówne wywo³ania funcji w programie.
 	*
-	* Plik zawiera implementacjê metod klasy Polygon.
+	* Plik zawiera g³ówn¹ funkcjê wywo³ywan¹ po uruchomieniu programu.
 	*
 	* \author Miko³aj Kaczmarek
 	* \author Dawid Pieczyñski
 	* \author Jan Kaczmarek
 	* \author Jakub Marciniak
 	* \author Mateusz Chlebosz
-	* \date 2020.04.01
-	* \version 1.00.10
+	* \date 2020.04.02
+	* \version 1.00.20
 	*/
 #include <iostream>
 
 #include "Polygon.h"
 #include "Matrix.h"
+#include <initializer_list>
 
+double operator * (Punkt2 p, Punkt2 p1)
+{
+	/*
+		Iloczyn skalarny wektorów [a1, ..., an] *  [b1, ..., bn] = a1*b1 + ... + an*bn
+
+		Wynik jest liczb¹, nie punktem.
+
+		ak
+	*/
+
+	/*Punkt2* p3;
+	p3->setX() = p.getX() * p1.getX();
+	p3->setY() = p.getY() * p1.getY();*/
+
+	return p.getX()*p1.getX() + p.getY()*p1.getY();
+}
 
 int main()
 {
@@ -34,8 +51,8 @@ int main()
 	std::cout << "p1.getDistance(p2) == " << p1.getDistance(p2)<< std::endl << std::endl;
 
 	//wspó³rzêdne biegunowe
-	std::cout << "p2->getRadius() == " << p2->getRadius()<< std::endl;
-	std::cout << "p2->getAngle() == " << p2->getAngle()<< std::endl << std::endl;
+	std::cout << "p2->getRadius() == " << p2->getRadius() << std::endl;
+	std::cout << "p2->getAngle() == " << p2->getAngle() << std::endl << std::endl;
 
 	//wielkoœæ pamiêci dla obiektu p1
 	std::cout << "sizeof(p1) == " << sizeof(p1) << std::endl << std::endl;
@@ -107,7 +124,34 @@ int main()
 	Punkt2 is2;
 	is2.setX(15);
 	is2.setY(0);
-	std::cout<<"Iloczyn skalarny: "<< is1.getX() * is2.getX() + is1.getY() * is2.getY();
-
+	std::cout<<"Iloczyn skalarny zwyk³y kontrolny: "<< is1.getX() * is2.getX() + is1.getY() * is2.getY();
+	std::cout << "Iloczyn skalarny zwyk³y op: " << is1 * is2;
+	Punkt2 test1;
+	test1.setX(15);
+	test1.setY(5);
+	Punkt2 test2;
+	test2.setX(25);
+	test2.setY(5);
+	Punkt2 testresult = test1 - test2;
+	std::cout << "Wynik odejmowania punktów: [" << testresult.getX() << "," << testresult.getY() << "]" << std::endl;
+	/*
+	initializer_list yus[];
+	yus[0] = 5;
+	yus[1] = 7;
+	Punkt2 p40 = Punkt2(yus);
+	Polygon* p50 = Polygon(p40);
+	*/
 	//W funkcji main() zdefiniuj zmienne dla konstruktora niedomyœlnego klasy Polygon i utwórz adekwatny obiekt. Odczytaj iloœæ obiektów typu Punkt2 wygenerowanych przez program.
+	Punkt2 p1 = Punkt2(1.0, 2.0);
+	
+	Punkt2 p2 = p1;
+	
+	Punkt2 p3 = p1 + p2;
+
+	Punkt2 p4 = Punkt2(1000, 2000) + Punkt2(3000, 4000);
+
+	Punkt2 p5 = f(Punkt2(10, 20));
+
+	Punkt2 p6 = f(Punkt2(100, 200) + Punkt2(100, 200));
+	p2 = p3;
 }

@@ -11,13 +11,12 @@
 	* \author Jakub Marciniak
 	* \author Dawid Pieczyñski
 	* \author Jan Kaczmarek
-	* \date 2020.04.01
-	* \version 1.00.10
+	* \date 2020.04.02
+	* \version 1.00.20
 	*/
 
 #pragma once
-
-int Punkt2_instances = 0;
+#include <initializer_list>
 
 class Punkt2
 {
@@ -25,12 +24,15 @@ class Punkt2
 	double y{ 0.0 };
 
 public:
-	//constructor
-	Punkt2();
+	static int instances; /* Liczba instancji */
 
+	//constructor
+	Punkt2(/*std::initializer_list<Punkt2> lista*/);
+	Punkt2(std::initializer_list<double> lista);
+	//Punkt2();
 	//Punkt2(Punkt2&& p);
 	
-	//~Punkt2();
+	~Punkt2();
 
 
 	//settery
@@ -47,7 +49,13 @@ public:
 	
 	//odleg³oœæ punktu od punktu _p
 	double getDistance(Punkt2* _p);
-
-	//operator mno¿enia skalarnego w klasie zadeklarowany jajo mno¿enie wektorów
+	
+	// operator odejmowania w klasie
+	Punkt2 operator - (Punkt2& p);
+	//operator przypisuj¹cy
+	Punkt2 operator=(const Punkt2& p);
+	//operator mno¿enia skalarnego w klasie zadeklarowany jako mno¿enie wektorów
+	/*
 	double operator * (Punkt2& p);
+	*/
 };

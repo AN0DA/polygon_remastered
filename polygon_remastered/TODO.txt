@@ -24,11 +24,6 @@ lab26:
 
 
 lab27:
-     Do klasy Punkt2 dodaj
-
-        operator odejmowania (w klasie)
-
-        operator iloczynu skalarnego (poza klas¹) 
 
     W funkcji main() przetestuj zdefiniowane opertaory. 
 
@@ -48,8 +43,6 @@ lab29:
 
 
 lab30:
-    WprowadŸ (z wyk³adu) do kodu klasy Punkt2 konstruktor z parametrem std::initializer_list oraz (równie¿ z wyk³adu) odpowiednie testy do funkcji main(). Przeanalizuj dok³adnie wyniki.
-
     Zadanie dla chêtnych: Do klasy Polygon dopisz konstruktor z parametrem std::initializer_list, korzystaj¹c z faktu, ¿e w klasie Punkt2 analogiczny konstruktor ju¿ istnieje. Wykorzystaj fakt, ¿e w szablonie std::initalizer_list istnieje metoda size(). W funkcji main() przeprowadŸ analogiczne jego testym, jak dla klasy Punkt2.
 
     Zmodyfikuj wszystkie konstruktory w klasach Punkt2 oraz Polygon tak, aby maksymalnie wykorzystywa³y mo¿liwoœci listy inicjalizacyjnej konstruktora.

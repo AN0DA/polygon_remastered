@@ -1,12 +1,8 @@
-#pragma once
-//plik Matrix.h
-
 	/*! \file Matrix.h
 	*
-	* \brief Zawiera deklaracjê klasy Punkt2
+	* \brief Zawiera deklaracjê klasy Matrix
 	*
-	* Plik zawiera deklaracjê klasy Punkt2.h.
-	* Wspó³rzêdne punktu s¹ podawane w uk³adzie kartezjañskim.
+	* Plik zawiera deklaracjê klasy Matrix.h.
 	* Klasa zawiera kilka metod skladowych
 	*
 	* \author Mateusz Chlebosz
@@ -14,18 +10,18 @@
 	* \author Jakub Marciniak
 	* \author Dawid Pieczyñski
 	* \author Jan Kaczmarek
-	* \date 2020.04.01
-	* \version 1.00.00
+	* \date 2020.04.02
+	* \version 1.00.20
 	*/
+
+#pragma once
+
+
 class Matrix {
 	double** tab;
 	int sizeX;
 	int sizeY;
-	double* operator[](unsigned int a) {
-		return tab[a];
-	}
-	double operator()(int a, int b) {
-		return tab[a][b];
-	};
+	double* operator[](unsigned int a);
+	double operator()(int a, int b);
 };
 

@@ -9,28 +9,40 @@
 	* \author Jan Kaczmarek
 	* \author Jakub Marciniak
 	* \author Mateusz Chlebosz
-	* \date 2020.04.01
-	* \version 1.00.10
+	* \date 2020.04.02
+	* \version 1.00.20
 	*/
 
 
 #include "polygon.h"
 
+#include <initializer_list>
 #include <iostream>
 #include <fstream>
 
-
+int Polygon::instances = 0;
 
 Polygon::Polygon() {
-	polygon_instances++;
+	instances++;
+};
+
+Polygon::Polygon(std::initializer_list<Punkt2> lista) {
+	instances++;
+	int i = 0;
+	for (auto x : lista) {
+		vertices[i] = x;
+		i++;
+	}
 };
 
 
 Polygon::~Polygon() {
-	polygon_instances--;
+	instances--;
 }
 
-
+//Polygon::Polygon(const Polygon& old_poly) {
+////zawartoœæ kontruktora kopiuj¹cego g³êboko
+//}
 
 void Polygon::setVertices(Punkt2* _vertices, int _count)
 {

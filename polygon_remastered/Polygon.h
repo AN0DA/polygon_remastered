@@ -3,37 +3,47 @@
 	* \brief Zawiera deklaracjê klasy Polygon
 	*
 	* Plik zawiera deklaracjê klasy Polygon.h.
+	* Tablica vertices zawiera punkty podane w kolejnoœci konstruowania figury.
 	*
 	* \author Mateusz Chlebosz
-	* \author Mikolaj Kaczmarek
+	* \author Miko³aj Kaczmarek
 	* \author Jakub Marciniak
 	* \author Dawid Pieczyñski
 	* \author Jan Kaczmarek
-	* \date 2020.04.01
-	* \version 1.00.10
+	* \date 2020.04.02
+	* \version 1.00.20
 	*/
 
 #pragma once
 
 #include <vector>
+#include <initializer_list>
 
 #include "Punkt2.h"
 
 
-int polygon_instances = 0;
+
+//int polygon_instances = 0;
 
 class Polygon
 {
-	unsigned int count; /*!< Iloœæ wierzcho³ków wielok¹ta */
+	unsigned int count; /*!< Liczba wierzcho³ków wielok¹ta */
 
 	Punkt2* vertices{0}; /*!< Tablica wierzocho³ków */
 
 
 public:
-
 	Polygon();
+		static int instances; /* Liczba instancji */
 
+	//Konstruktor kopiuj¹cy zapewnij¹cy kopiê g³êbok¹
+	Polygon(Polygon& schem);
+	//template< class T >
+	//class initializer_list;
+	Polygon(std::initializer_list<Punkt2> lista);
 	~Polygon();
+
+	//Polygon(const Polygon&);
 
 
 	//! Metoda konstruuj¹ca tablicê wierzcho³ków.
@@ -60,20 +70,25 @@ public:
 	*/
 	void setCount(int n);
 
-	double getPerimeter(); /*!< Metoda obliczaj¹ca obwód wielok¹ta */
+	//! Metoda obliczaj¹ca obwód wielok¹ta */
+	double getPerimeter();
 
+	//! Metoda zwracaj¹ca wczytane punkty wielok¹ta.
 	Punkt2* getVertices();
 	
+	//! Metoda zwracaj¹ca pole wielok¹ta wypuk³ego.
 	double getConvexArea();
-	//double getConvexArea();
+	
+	//! Metoda zwracaj¹ca pole dowolnego wielok¹ta.
 	double getArea();
 
 
 	// void saveThis(int type, char* lokalizacja);//type 1-binary,type 2-normal
 
+	//! Metoda zwracaj¹ca liczbê zdefiniowaych instancji klasy Polygon.
 	static int instanceAmount();
 	
 private:
-	/*oblicza pole trójk¹ta na podstawie wierzcho³ków*/
+	//! Metoda zwraca pole trójk¹ta na podstawie wierzcho³ków.
 	double getTriangleArea(Punkt2 _p1, Punkt2 _p2, Punkt2 _p3);
 };
